@@ -236,6 +236,6 @@ module "dns" {
   aliases          = compact([signum(length(var.parent_zone_id)) == 1 || signum(length(var.parent_zone_name)) == 1 ? var.hostname : ""])
   parent_zone_id   = var.parent_zone_id
   parent_zone_name = var.parent_zone_name
-  target_dns_name  = aws_s3_bucket.default.website_domain
+  target_dns_name  = aws_s3_bucket.default.website_endpoint
   target_zone_id   = aws_s3_bucket.default.hosted_zone_id
 }
